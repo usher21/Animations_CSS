@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    background-color: rgb(43, 41, 41);
+    position: relative;
+}
+
+.container {
+    width: 250px;
+    height: 250px;
+    position: relative;
+}
+
+.container .bloc1, .container .bloc2 {
+    background-color: brown;
+    width: 100%;
+    height: 100%;
+}
+
+.container .bloc2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(50deg);
+}
+
+.container .bloc2 .bloc2-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.container .text {
+    position: absolute;
+    height: 100%;
+    margin: 0 auto;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    text-align: center;
+}
+
+/* ------------ Before after bloc1 ------------ */
+
+.container .bloc1::before, .container .bloc1::after {
+    content: "";
+    width: 100%;
+    transform: scale(0);
+    height: 4px;
+    background-color: #FFF;
+    position: absolute;
+}
+
+.container .bloc1::before {
+    left: 0;
+    top: 0;
+}
+
+.container .bloc1::after {
+    right: 0;
+    bottom: 0;
+}
+
+.container:hover .bloc1::before, .container:hover .bloc1::after {
+    transform: scale(1);
+    transition: all 0.5s;
+}
+
+/* ------------ Before after container ------------ */
+
+.container::before, .container::after {
+    content: "";
+    width: 4px;
+    transform: scale(0);
+    height: 100%;
+    background-color: #FFF;
+    position: absolute;
+    z-index: 2;
+    transition: all 0.5s;
+}
+
+.container::before {
+    top: 0;
+    left: 0;
+}
+
+.container::after {
+    bottom: 0;
+    right: 0;
+}
+
+.container:hover::before, .container:hover::after {
+    transition-delay: 0.5s;
+    transform: scale(1);
+}
+
+/* ------------ Before after bloc2 ------------ */
+
+.container .bloc2::before, .container .bloc2::after  {
+    content: "";
+    width: 100%;
+    transform: scale(0);
+    height: 4px;
+    background-color: #FFF;
+    position: absolute;
+    transition: all 0.5s;
+}
+
+.container .bloc2::before {
+    top: 0;
+    left: 0;
+}
+
+.container .bloc2::after {
+    bottom: 0;
+    right: 0;
+}
+
+.container:hover .bloc2::before, .container:hover .bloc2::after {
+    transition-delay: 1s;
+    transform: scale(1);
+}
+
+/* ------------ Before after bloc2-1 ------------ */
+
+.container .bloc2 .bloc2-1::before, .container .bloc2 .bloc2-1::after {
+    content: "";
+    width: 4px;
+    transform: scale(0);
+    height: 100%;
+    background-color: #FFF;
+    position: absolute;
+    transition: all 0.5s;
+}
+
+.container .bloc2 .bloc2-1::before {
+    top: 0;
+    left: 0;
+}
+
+.container .bloc2 .bloc2-1::after {
+    bottom: 0;
+    right: 0;
+}
+
+.container:hover .bloc2 .bloc2-1::before, .container:hover .bloc2 .bloc2-1::after {
+    transform: scale(1);
+    transition-delay: 1.5s;
+}

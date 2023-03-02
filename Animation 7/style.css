@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 400px;
+    height: 100px;
+    border: 4px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-family: sans-serif;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+}
+
+.container::before {
+    content: "Hoverable";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10rem;
+    opacity: 0;
+}
+
+.container:hover::before {
+    font-size: 2rem;
+    opacity: 1;
+}
