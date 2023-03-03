@@ -1,7 +1,10 @@
 # Animations_CSS
 
-@author Mar Ndiaye\n
-@Date 02-03-2023\n
+@author Mar Ndiaye
 
-#------------------------------------------------------\n
+@Date 02-03-2023
+
+
+#------------------------------------------------------
+
 Quelques exercises sur les animations en css
